@@ -1,1 +1,23 @@
-<p>todo-edit works!</p>
+<h2>Edit Todo</h2>
+<form class="todo-form" [formGroup]="todoForm">
+  <div class="inputs">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput type="text" placeholder="Title" formControlName="title" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Details</mat-label>
+      <textarea
+        matInput
+        placeholder="Details"
+        formControlName="detail"
+      ></textarea>
+    </mat-form-field>
+  </div>
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="submitForm()">
+      Submit
+    </button>
+    <button mat-raised-button>Cancel</button>
+  </div>
+</form>
