@@ -1,7 +1,8 @@
 <div class="todo-list">
-  <ul *ngIf="todos$ | async; let todos">
-    <li *ngFor="let todo of todos">
-      {{ todo.title }}
-    </li>
-  </ul>
+  <mat-list role="list" *ngIf="todos$ | async; let todos">
+    <mat-list-item role="listitem" *ngFor="let todo of todos">
+      <span>{{ todo.title }}</span>
+      <button mat-button (click)="edit(todo)">Edit</button>
+    </mat-list-item>
+  </mat-list>
 </div>

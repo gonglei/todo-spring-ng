@@ -12,4 +12,15 @@ export class TodoService {
   getList(): Observable<Todo[]> {
     return this.http.get<Todo[]>(`${this.baseUrl}/todos`)
   }
+
+  getTodo(id: number): Observable<Todo> {
+    return this.http.get<Todo>(`${this.baseUrl}/todos/${id}`)
+  }
+
+  addOrUpdate(todo: Todo): Observable<Todo> {
+    if (todo.id) {
+      return this.http.put<Todo>(`${this.baseUrl}/todos`, todo)
+    }
+    return this.http.post<Todo>(`${this.baseUrl}/todos`, todo)
+  }
 }

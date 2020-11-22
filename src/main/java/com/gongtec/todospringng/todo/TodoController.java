@@ -1,6 +1,7 @@
 package com.gongtec.todospringng.todo;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,6 +26,11 @@ public class TodoController {
   @GetMapping
   public List<Todo> getTodos() {
     return (List<Todo>) todoRepository.findAll();
+  }
+
+  @GetMapping("/{id}")
+  public Optional<Todo> getTodoById(@PathVariable Long id) {
+    return todoRepository.findById(id);
   }
 
   @PostMapping
