@@ -1,5 +1,5 @@
 <div class="todo-list">
-  <ul>
+  <ul *ngIf="todos$ | async; let todos">
     <li *ngFor="let todo of todos">
       {{ todo.title }}
     </li>

@@ -1,12 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
+import { HttpClientModule } from '@angular/common/http'
+import { NgModule } from '@angular/core'
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { TodoEditComponent } from './todo-edit/todo-edit.component';
-import { TodoDetailComponent } from './todo-detail/todo-detail.component';
+import { AppRoutingModule } from './app-routing.module'
+import { AppComponent } from './app.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { TodoListComponent } from './todo-list/todo-list.component'
+import { TodoEditComponent } from './todo-edit/todo-edit.component'
+import { TodoDetailComponent } from './todo-detail/todo-detail.component'
 
 @NgModule({
   declarations: [
@@ -17,10 +18,11 @@ import { TodoDetailComponent } from './todo-detail/todo-detail.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
