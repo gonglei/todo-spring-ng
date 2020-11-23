@@ -3,12 +3,20 @@
   <div class="inputs">
     <mat-form-field>
       <mat-label>Title</mat-label>
-      <input matInput type="text" placeholder="Title" formControlName="title" />
+      <input
+        matInput
+        type="text"
+        name="title"
+        placeholder="Title"
+        formControlName="title"
+      />
+      <mat-error>Title is required.</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Details</mat-label>
       <textarea
         matInput
+        name="detail"
         rows="5"
         placeholder="Details"
         formControlName="detail"

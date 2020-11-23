@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { Todo } from '../models/todo.model'
 import { TodoService } from '../services/todo.service'
+import { AppErrorStateMatcher } from '../common/app-error-state-matcher'
 
 @Component({
   selector: 'app-todo-edit',
@@ -14,6 +15,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
   todoForm: FormGroup
   todo: Todo
   subs: Subscription
+  matcher = new AppErrorStateMatcher()
 
   constructor(
     private router: Router,
@@ -22,7 +24,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
     private todoService: TodoService
   ) {
     this.todoForm = this.fb.group({
-      title: [''],
+      title: ['', Validators.required],
       detail: ['']
     })
   }
@@ -48,10 +50,12 @@ export class TodoEditComponent implements OnInit, OnDestroy {
   }
 
   submitForm(): void {
-    const todo = { ...this.todo, ...this.todoForm.value }
-    this.todoService.addOrUpdate(todo).subscribe(() => {
-      this.router.navigate(['/list'])
-    })
+    if (this.todoForm.valid) {
+      const todo = { ...this.todo, ...this.todoForm.value }
+      this.todoService.addOrUpdate(todo).subscribe(() => {
+        this.router.navigate(['/list'])
+      })
+    }
   }
 
   cancel(): void {
