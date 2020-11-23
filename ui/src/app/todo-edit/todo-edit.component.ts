@@ -53,4 +53,8 @@ export class TodoEditComponent implements OnInit, OnDestroy {
       this.router.navigate(['/list'])
     })
   }
+
+  cancel(): void {
+    this.router.navigate(['/list'])
+  }
 }

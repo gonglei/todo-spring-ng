@@ -1,4 +1,4 @@
-<h2>Edit Todo</h2>
+<h2>{{ todo.id ? 'Edit' : 'Add' }} Todo</h2>
 <form class="todo-form" [formGroup]="todoForm">
   <div class="inputs">
     <mat-form-field>
@@ -18,6 +18,6 @@
     <button mat-raised-button color="primary" (click)="submitForm()">
       Submit
     </button>
-    <button mat-raised-button>Cancel</button>
+    <button mat-raised-button (click)="cancel()">Cancel</button>
   </div>
 </form>

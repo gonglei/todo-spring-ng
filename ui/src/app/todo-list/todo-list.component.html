@@ -1,8 +1,15 @@
-<div class="todo-list">
+<mat-card class="todo-list">
+  <div class="links">
+    <a routerLink="/edit">Add a new todo</a>
+  </div>
   <mat-list role="list" *ngIf="todos$ | async; let todos">
     <mat-list-item role="listitem" *ngFor="let todo of todos">
-      <span>{{ todo.title }}</span>
-      <button mat-button (click)="edit(todo)">Edit</button>
+      <div class="todo-item">
+        <div class="title">{{ todo.title }}</div>
+        <div class="actions">
+          <button mat-button (click)="edit(todo)">Edit</button>
+        </div>
+      </div>
     </mat-list-item>
   </mat-list>
-</div>
+</mat-card>
