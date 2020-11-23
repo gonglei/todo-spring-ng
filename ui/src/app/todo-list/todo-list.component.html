@@ -13,6 +13,7 @@
           <button mat-button *ngIf="todo.done" (click)="toggleDone(todo)">
             UnDone
           </button>
+          <button mat-button (click)="delete(todo)">Delete</button>
           <button mat-button (click)="edit(todo)">Edit</button>
         </div>
       </div>

@@ -19,6 +19,13 @@ export class TodoListComponent implements OnInit {
     this.router.navigate(['/edit', { id: todo.id }])
   }
 
+  delete(todo: Todo): void {
+    const subs = this.todoService.delete(todo.id).subscribe(() => {
+      this.todos$ = this.todoService.getList()
+      subs.unsubscribe()
+    })
+  }
+
   toggleDone(todo: Todo): void {
     const subs = this.todoService
       .addOrUpdate({ ...todo, done: !todo.done })

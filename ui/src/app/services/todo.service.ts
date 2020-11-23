@@ -23,4 +23,8 @@ export class TodoService {
     }
     return this.http.post<Todo>(`${this.baseUrl}/todos`, todo)
   }
+
+  delete(id: number): any {
+    return this.http.delete<number>(`${this.baseUrl}/todos/${id}`)
+  }
 }
