@@ -23,7 +23,7 @@ Todo app with Spring Boot back-end and Angular front-end
 1. app (browser): http://localhost:4200
 2. h2 console (jdbc:h2:mem:tododb): http://localhost:8080/h2-console
 
-## Application have following functionalities
+## Application has following functionalities
 
 1. List TODO items
 2. Add TODO item
@@ -32,7 +32,7 @@ Todo app with Spring Boot back-end and Angular front-end
 5. DELETE TODO item
 6. View TODO details
 
-## Application have the following implementations
+## Application has the following implementations
 
 1. REST APIs
 2. Connect to a database (any database)
