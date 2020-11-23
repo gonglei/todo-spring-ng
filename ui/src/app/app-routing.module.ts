@@ -7,7 +7,7 @@ import { TodoListComponent } from './todo-list/todo-list.component'
 const routes: Routes = [
   { path: 'list', component: TodoListComponent },
   { path: 'edit', component: TodoEditComponent },
-  { path: 'detail', component: TodoDetailComponent },
+  { path: 'view', component: TodoDetailComponent },
   { path: '', redirectTo: '/list', pathMatch: 'full' }
 ]
 

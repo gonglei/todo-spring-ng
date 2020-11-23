@@ -5,7 +5,9 @@
   <mat-list role="list" *ngIf="todos$ | async; let todos">
     <mat-list-item role="listitem" *ngFor="let todo of todos">
       <div class="todo-item">
-        <div class="title" [class.done]="todo.done">{{ todo.title }}</div>
+        <div class="title" [class.done]="todo.done" (click)="view(todo)">
+          {{ todo.title }}
+        </div>
         <div class="actions">
           <button mat-button *ngIf="!todo.done" (click)="toggleDone(todo)">
             Done

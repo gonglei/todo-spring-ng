@@ -1,1 +1,16 @@
-<p>todo-detail works!</p>
+<div class="todo-detail">
+  <a routerLink="/list">Back to List</a>
+  <h2 class="header">Todo Details</h2>
+  <div class="info-field">
+    <strong>Title</strong>
+    <div>{{ todo?.title }}</div>
+  </div>
+  <div class="info-field">
+    <strong>Details</strong>
+    <div>{{ todo?.detail }}</div>
+  </div>
+  <div class="info-field">
+    <strong>Done?</strong>
+    <div>{{ todo?.done ? 'Yes' : 'No' }}</div>
+  </div>
+</div>

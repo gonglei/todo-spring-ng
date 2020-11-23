@@ -19,6 +19,10 @@ export class TodoListComponent implements OnInit {
     this.router.navigate(['/edit', { id: todo.id }])
   }
 
+  view(todo: Todo): void {
+    this.router.navigate(['/view', { id: todo.id }])
+  }
+
   delete(todo: Todo): void {
     const subs = this.todoService.delete(todo.id).subscribe(() => {
       this.todos$ = this.todoService.getList()
