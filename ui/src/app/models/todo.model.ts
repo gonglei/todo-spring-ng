@@ -4,7 +4,7 @@ export class Todo {
   detail: string
   done: boolean
 
-  constructor(options: Partial<Todo> = {}) {
+  constructor(options: Partial<Todo> = { done: false }) {
     Object.assign(this, options)
   }
 }

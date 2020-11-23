@@ -6,5 +6,9 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    .done {
+      color: gray;
+      text-decoration: line-through;
+    }
   }
 }
