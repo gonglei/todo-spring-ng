@@ -1,0 +1,12 @@
+.todo-form {
+  .inputs {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .actions {
+    text-align: center;
+    button:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+}

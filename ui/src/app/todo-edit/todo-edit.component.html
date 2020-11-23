@@ -1,4 +1,4 @@
-<h2>{{ todo.id ? 'Edit' : 'Add' }} Todo</h2>
+<h2>{{ todo && todo.id ? 'Edit' : 'Add' }} Todo</h2>
 <form class="todo-form" [formGroup]="todoForm">
   <div class="inputs">
     <mat-form-field>
@@ -9,6 +9,7 @@
       <mat-label>Details</mat-label>
       <textarea
         matInput
+        rows="5"
         placeholder="Details"
         formControlName="detail"
       ></textarea>
