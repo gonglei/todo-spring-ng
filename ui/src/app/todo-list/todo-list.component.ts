@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core'
+import { MatDialog } from '@angular/material/dialog'
 import { Router } from '@angular/router'
 import { Todo } from '../models/todo.model'
 import { TodoService } from '../services/todo.service'
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component'
 
 @Component({
   selector: 'app-todo-list',
@@ -11,7 +13,11 @@ import { TodoService } from '../services/todo.service'
 export class TodoListComponent implements OnInit {
   todos$ = this.todoService.getList()
 
-  constructor(private router: Router, private todoService: TodoService) {}
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+    private todoService: TodoService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -24,10 +30,17 @@ export class TodoListComponent implements OnInit {
   }
 
   delete(todo: Todo): void {
-    const subs = this.todoService.delete(todo.id).subscribe(() => {
-      this.todos$ = this.todoService.getList()
-      subs.unsubscribe()
-    })
+    this.dialog
+      .open(ConfirmDeleteComponent, { data: todo })
+      .afterClosed()
+      .subscribe(result => {
+        if (result) {
+          const subs = this.todoService.delete(todo.id).subscribe(() => {
+            this.todos$ = this.todoService.getList()
+            subs.unsubscribe()
+          })
+        }
+      })
   }
 
   toggleDone(todo: Todo): void {

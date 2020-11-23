@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
 import { MatListModule } from '@angular/material/list'
 import { MatCardModule } from '@angular/material/card'
+import { MatDialogModule } from '@angular/material/dialog'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -14,13 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { TodoListComponent } from './todo-list/todo-list.component'
 import { TodoEditComponent } from './todo-edit/todo-edit.component'
 import { TodoDetailComponent } from './todo-detail/todo-detail.component'
+import { ConfirmDeleteComponent } from './todo-list/confirm-delete/confirm-delete.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
     TodoEditComponent,
-    TodoDetailComponent
+    TodoDetailComponent,
+    ConfirmDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { TodoDetailComponent } from './todo-detail/todo-detail.component'
     MatButtonModule,
     MatListModule,
     MatCardModule,
+    MatDialogModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
