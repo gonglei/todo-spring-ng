@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 public class TodoSpringNgApplication {
 
   public static void main(String[] args) {
-   	SpringApplication.run(TodoSpringNgApplication.class, args);
+    SpringApplication.run(TodoSpringNgApplication.class, args);
   }
 
   @Bean
